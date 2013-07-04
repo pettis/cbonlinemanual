@@ -3,9 +3,10 @@ from .models import ManualPage
 
 
 class ManualPageAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('title',), }
+
     class Meta:
         model = ManualPage
-        prepopulated_fields = {'slug': ('title',), }
 
 
 admin.site.register(ManualPage, ManualPageAdmin)

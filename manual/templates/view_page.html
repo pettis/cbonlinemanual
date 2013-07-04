@@ -1,13 +1,14 @@
 <html>
 <head>
-    <title>{{ page.title }} - Das Über CB Manual</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}CoolBasic Manual</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}manual/style.css" />
 </head>
 <body>
 <div id="wrap">
     <div id="navigation">
         <ul>
         {% for navitem in navigation %}
-            <li>{{ navitem.title }}</li>
+            <li><a href="{% url "manual_view_page" navitem.slug %}">{{ navitem.title }}</a></li>
         {% endfor %}
         </ul>
     </div>

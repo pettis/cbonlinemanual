@@ -1,12 +1,15 @@
 body {
     font-size:11pt;
     font-family:arial, verdana, tahoma, sans-serif;
-
+    background:lightblue;
 }
 
 #wrap {
     width:980px;
     border:1px solid black;
+    margin:0 auto;
+    background:white;
+    padding:20px;
 }
 
 #navigation {
@@ -16,4 +19,10 @@ body {
 
 #content {
     padding-left:220px;
+}
+
+#pagemeta {
+    font-size:85%;
+    margin-top:20px;
+    text-align: right;
 }
