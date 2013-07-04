@@ -1,8 +1,10 @@
 from django.db import models
 
+
 class PublishedPagesManager(models.Manager):
     def get_query_set(self):
         return super(PublishedPagesManager, self).get_query_set().filter(published=True)
+
 
 class ManualPage(models.Model):
     parent = models.ForeignKey('ManualPage', null=True, blank=True)
@@ -20,4 +22,7 @@ class ManualPage(models.Model):
         return self.manualpage_set.filter(published=True)
 
     def __unicode__(self):
+        return self.title
+
+    def __str__(self):
         return self.title
