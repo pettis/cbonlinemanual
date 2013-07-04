@@ -10,9 +10,17 @@ def index(request):
 
 def view_page(request, slug):
     navigation = ManualPage.objects.filter(published=True, parent=None)
+    parents = []
     try:
         page = ManualPage.objects.get(slug=slug, published=True)
+        parents.append(int(page.id))
+        treeitem = page
+        while treeitem.parent != None:
+            parents.append(int(page.parent.id))
+            treeitem = treeitem.parent
+
     except ManualPage.DoesNotExist:
         raise Http404
     return render(request, 'view_page.html', {'navigation': navigation,
-                                              'page': page})
+                                              'page': page,
+                                              'parents':parents})
