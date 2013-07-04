@@ -1,0 +1,19 @@
+body {
+    font-size:11pt;
+    font-family:arial, verdana, tahoma, sans-serif;
+
+}
+
+#wrap {
+    width:980px;
+    border:1px solid black;
+}
+
+#navigation {
+    float:left;
+    width:200px;
+}
+
+#content {
+    padding-left:220px;
+}
