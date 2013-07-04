@@ -16,11 +16,12 @@ def view_page(request, slug):
         parents.append(int(page.id))
         treeitem = page
         while treeitem.parent != None:
-            parents.append(int(page.parent.id))
+            parents.append(int(treeitem.parent.id))
             treeitem = treeitem.parent
 
     except ManualPage.DoesNotExist:
         raise Http404
+    print parents
     return render(request, 'view_page.html', {'navigation': navigation,
                                               'page': page,
                                               'parents':parents})
