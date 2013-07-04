@@ -8,6 +8,10 @@ a {
     color:steelblue;
 }
 
+a:hover {
+    color:orange;
+}
+
 #wrap {
     width:980px;
     border:1px solid black;
