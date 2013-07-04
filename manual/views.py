@@ -1,4 +1,4 @@
-from models import ManualPage
+from .models import ManualPage
 from django.shortcuts import render
 
 
