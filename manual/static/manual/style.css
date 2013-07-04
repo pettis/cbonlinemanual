@@ -1,6 +1,6 @@
 body {
     font-size:11pt;
-    font-family:arial, verdana, tahoma, sans-serif;
+    font-family:verdana, tahoma, arial, sans-serif;
     background:lightblue;
 }
 
@@ -11,6 +11,12 @@ a {
 a:hover {
     color:orange;
 }
+
+h1 {
+    font-size:20pt;
+    font-weight: normal;
+}
+
 
 #wrap {
     width:980px;
