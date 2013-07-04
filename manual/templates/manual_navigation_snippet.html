@@ -1,0 +1,12 @@
+<ul>
+    {% for navitem in navigation %}
+        <li><a href="{% url "manual_view_page" navitem.slug %}">{{ navitem.title }}</a></li>
+        {% if navitem.manualpage_set %}
+            {% with "manual_navigation_snippet.html" as filename %}
+                {% with navitem.manualpage_set.all as navigation %}
+                    {% include filename %}
+                {% endwith %}
+            {% endwith %}
+        {% endif %}
+    {% endfor %}
+</ul>

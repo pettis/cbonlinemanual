@@ -6,11 +6,7 @@
 <body>
 <div id="wrap">
     <div id="navigation">
-        <ul>
-            {% for navitem in navigation %}
-                <li><a href="{% url "manual_view_page" navitem.slug %}">{{ navitem.title }}</a></li>
-            {% endfor %}
-        </ul>
+        {% include "manual_navigation_snippet.html" %}
     </div>
     <div id="content">
         <h1>{{ page.title }}</h1>
