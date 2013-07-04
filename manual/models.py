@@ -16,5 +16,8 @@ class ManualPage(models.Model):
     all_objects = models.Manager()
     objects = PublishedPagesManager()
 
+    def get_subpages(self):
+        return self.manualpage_set.filter(published=True)
+
     def __unicode__(self):
         return self.title

@@ -1,9 +1,9 @@
 <ul>
     {% for navitem in navigation %}
         <li><a href="{% url "manual_view_page" navitem.slug %}">{{ navitem.title }}</a></li>
-        {% if navitem.manualpage_set and navitem.id in parents %}
+        {% if navitem.get_subpages and navitem.id in parents %}
             {% with "manual_navigation_snippet.html" as filename %}
-                {% with navitem.manualpage_set.all as navigation %}
+                {% with navitem.get_subpages as navigation %}
                     {% include filename %}
                 {% endwith %}
             {% endwith %}
