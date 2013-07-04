@@ -3,8 +3,25 @@
     <title>{{ page.title }} - Das Über CB Manual</title>
 </head>
 <body>
+<div id="wrap">
+    <div id="navigation">
+        <ul>
+        {% for navitem in navigation %}
+            <li>{{ navitem.title }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="content">
+        <h1>{{ page.title }}</h1>
 
-    <h1>{{ page.title }}</h1>
-    <div id="pagecontent"></div>
+        <div id="pagecontent">
+            {{ page.content }}
+        </div>
+        <div id="pagemeta">
+            <span id="pageadded">Added: {{ page.added }}</span><span
+                id="pagemodified">Modified: {{ page.modified }}</span>
+        </div>
+    </div>
+</div>
 </body>
 </html>
