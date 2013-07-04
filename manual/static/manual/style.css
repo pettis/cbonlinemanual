@@ -4,6 +4,10 @@ body {
     background:lightblue;
 }
 
+a {
+    color:steelblue;
+}
+
 #wrap {
     width:980px;
     border:1px solid black;
@@ -25,6 +29,10 @@ body {
     font-size:85%;
     margin-top:20px;
     text-align: right;
+}
+
+#navigation a {
+    text-decoration:none;
 }
 
 #navigation ul {
