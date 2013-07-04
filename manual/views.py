@@ -21,7 +21,6 @@ def view_page(request, slug):
 
     except ManualPage.DoesNotExist:
         raise Http404
-    print parents
     return render(request, 'view_page.html', {'navigation': navigation,
                                               'page': page,
                                               'parents':parents})
